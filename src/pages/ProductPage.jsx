@@ -10,11 +10,7 @@ const ProductPage = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2 px-0 sm:px-6 md:px-10">
           {products.map((product) => (
             <div key={product.name}>
-              <ProductCard
-                imageCover={product.imageCover}
-                price={product.price}
-                name={product.name}
-              />
+              <ProductCard product={product} />
             </div>
           ))}
         </div>

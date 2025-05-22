@@ -23,6 +23,11 @@ const useCartStore = create(
             return { cart: [{ ...product, quantity: 1 }, ...state.cart] };
           }
         }),
+
+      deleteFromCart: (id) =>
+        set((state) => ({
+          cart: state.cart.filter((product) => product.id !== id),
+        })),
     }),
     {
       name: "cart-store",

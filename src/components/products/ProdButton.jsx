@@ -1,8 +1,4 @@
-import useCartStore from "../../store/useCartStore";
 const ProdButton = ({ buttonName, buttonClick, product }) => {
-  const cart = useCartStore((state) => state.cart);
-  console.log(cart);
-
   return (
     <button
       onClick={() => buttonClick(product)}

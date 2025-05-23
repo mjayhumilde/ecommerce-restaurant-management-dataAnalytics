@@ -39,7 +39,7 @@ const CartPage = () => {
   console.log(orders);
 
   return (
-    <main>
+    <main className="min-h-screen">
       <section className="grid grid-cols-2">
         <div>
           {cart.map((product) => (

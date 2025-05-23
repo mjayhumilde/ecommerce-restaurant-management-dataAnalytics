@@ -1,5 +1,5 @@
 const ProfilePage = () => {
-  return <div>ProfilePage</div>;
+  return <main className="min-h-screen">ProfilePage</main>;
 };
 
 export default ProfilePage;

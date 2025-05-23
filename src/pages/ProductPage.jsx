@@ -37,7 +37,7 @@ const ProductPage = () => {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-green-950">
       <section className="container p-4 mx-auto sm:p-6 md:p-10">
         {isAuthenticated && userRole === "admin" && (
           <div className="flex justify-end mb-4">

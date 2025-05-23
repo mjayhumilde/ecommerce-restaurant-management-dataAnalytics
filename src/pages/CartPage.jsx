@@ -1,9 +1,13 @@
-import { Trash2 } from "lucide-react";
 import useCartStore from "../store/useCartStore";
+import useAuthStore from "../store/useAuthStore";
+
+import { Trash2 } from "lucide-react";
 
 const CartPage = () => {
   const { deleteFromCart } = useCartStore();
   const cart = useCartStore((state) => state.cart);
+
+  const user = useAuthStore((state) => state.user);
 
   const total = cart.reduce((sum, product) => {
     return sum + product.price * product.quantity;
@@ -44,11 +48,7 @@ const CartPage = () => {
             ))}
             <div>total: ₱{total}</div>
             <div>
-              <button
-                onClick={() =>
-                  console.log([{ user: "Lhenard Kaiser", purchase: cart }])
-                }
-              >
+              <button onClick={() => console.log([{ user, purchase: cart }])}>
                 Purchase
               </button>
             </div>

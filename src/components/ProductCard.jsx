@@ -1,11 +1,17 @@
-import ProdButton from "./products/ProdButton";
 import useCartStore from "../store/useCartStore";
+import useAuthStore from "../store/useAuthStore";
+import useProductsStore from "../store/useProductsStore";
+import ProdButton from "./products/ProdButton";
+import { Trash } from "lucide-react";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCartStore();
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const userRole = useAuthStore((state) => state.userRole);
+  const { deleteProduct } = useProductsStore();
 
   return (
-    <div className="overflow-hidden bg-white rounded-md shadow-md">
+    <div className="relative overflow-hidden bg-white rounded-md shadow-md">
       <div className="relative w-full h-48 md:h-64">
         <img
           className="object-cover w-full h-full"
@@ -18,12 +24,23 @@ const ProductCard = ({ product }) => {
           {product.name}
         </h2>
         <p className="mb-3 text-sm text-gray-600">₱{product.price}</p>
-        <ProdButton
-          buttonName={"Add to Cart"}
-          buttonClick={addToCart}
-          product={product}
-        />
+        {isAuthenticated && userRole === "admin" ? null : (
+          <ProdButton
+            buttonName={"Add to Cart"}
+            buttonClick={addToCart}
+            product={product}
+          />
+        )}
       </div>
+      {isAuthenticated && userRole === "admin" && (
+        <div>
+          <Trash
+            onClick={() => deleteProduct(product.id)}
+            className="hover:cursor-pointer"
+            color="red"
+          />
+        </div>
+      )}
     </div>
   );
 };

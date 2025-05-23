@@ -17,12 +17,17 @@ const Header = () => {
     <header className="fixed top-0 left-0 z-50 w-full h-20 border-b-4 border-green-900 bg-green-950">
       <div className="container flex items-center justify-between h-full px-2 py-2 mx-auto">
         {/* left section */}
-        <img
+        <div
           onClick={() => navigate("/")}
-          className="object-cover rounded-full w-15 h-15 hover:cursor-pointer"
-          src={logo}
-          alt="Logo"
-        />
+          className="flex justify-center items-center space-x-2 hover:cursor-pointer"
+        >
+          <img
+            className="object-cover rounded-full w-15 h-15 "
+            src={logo}
+            alt="Logo"
+          />
+          <p className="text-2xl">QUADROS PIZZA</p>
+        </div>
         {/* middle section */}
         <div className="flex items-center p-2 font-bold text-red-900 bg-white border border-red-900 rounded-lg">
           <input

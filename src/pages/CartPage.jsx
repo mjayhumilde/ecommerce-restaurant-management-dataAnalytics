@@ -1,11 +1,14 @@
 import useCartStore from "../store/useCartStore";
 import useAuthStore from "../store/useAuthStore";
+import useOrderStore from "../store/useOrderStore";
 
 import { Trash2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 const CartPage = () => {
   const { deleteFromCart, clearCart } = useCartStore();
+  const { addOrder } = useOrderStore();
+  const orders = useOrderStore((state) => state.orders);
   const cart = useCartStore((state) => state.cart);
   const user = useAuthStore((state) => state.user);
 
@@ -22,15 +25,18 @@ const CartPage = () => {
   }, 0);
 
   function handlePurchase(data) {
-    console.log({
+    addOrder({
+      id: cart.length * 3023, // to make it unique for now || avoid problems
       user,
-      purchase: cart,
+      purchaseProducts: cart,
       addrs: data,
       orderStatus: "preparing ",
     });
     clearCart();
     reset();
   }
+
+  console.log(orders);
 
   return (
     <main>

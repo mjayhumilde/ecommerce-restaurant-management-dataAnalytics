@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useCartStore();
 
   return (
-    <div className="bg-white rounded-md shadow-md overflow-hidden">
+    <div className="overflow-hidden bg-white rounded-md shadow-md">
       <div className="relative w-full h-48 md:h-64">
         <img
           className="object-cover w-full h-full"
@@ -14,10 +14,10 @@ const ProductCard = ({ product }) => {
         />
       </div>
       <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800 mb-2 text-ellipsis overflow-hidden text-nowrap">
+        <h2 className="mb-2 overflow-hidden text-lg font-semibold text-gray-800 text-ellipsis text-nowrap">
           {product.name}
         </h2>
-        <p className="text-gray-600 text-sm mb-3">₱{product.price}</p>
+        <p className="mb-3 text-sm text-gray-600">₱{product.price}</p>
         <ProdButton
           buttonName={"Add to Cart"}
           buttonClick={addToCart}

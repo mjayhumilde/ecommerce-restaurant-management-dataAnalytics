@@ -9,18 +9,18 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <header className=" border-b-4 border-black">
-      <div className=" container mx-auto px-2 py-2 flex justify-between items-center">
+    <header className="border-b-4 border-black ">
+      <div className="container flex items-center justify-between px-2 py-2 mx-auto ">
         {/* lefet section */}
         <img
           onClick={() => navigate("/")}
-          className="w-15 rounded-full"
+          className="rounded-full w-15"
           src={logo}
           alt=""
         />
 
         {/* middle section */}
-        <div className="bg-white font-bold flex justify-center items-center border text-red-900 border-red-900 p-2">
+        <div className="flex items-center justify-center p-2 font-bold text-red-900 bg-white border border-red-900">
           <input
             className="border-none"
             type="text"
@@ -30,14 +30,14 @@ const Header = () => {
         </div>
         {/* 
         right section */}
-        <div className=" text-red-900 flex justify-center  items-center">
-          <div className="bg-white flex space-x-3 rounded-full p-2">
+        <div className="flex items-center justify-center text-red-900 ">
+          <div className="flex p-2 space-x-3 bg-white rounded-full">
             <div
               onClick={() => navigate("cart")}
               className="relative hover:cursor-pointer "
             >
               <ShoppingCart size={32} />
-              <span className="absolute bg-red-400 px-2 font-bold rounded-full -top-3 -right-3">
+              <span className="absolute px-2 font-bold bg-red-400 rounded-full -top-3 -right-3">
                 {cart.length}
               </span>
             </div>

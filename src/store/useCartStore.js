@@ -28,7 +28,13 @@ const useCartStore = create(
         set((state) => ({
           cart: state.cart.filter((product) => product.id !== id),
         })),
+
+      clearCart: () =>
+        set(() => ({
+          cart: [],
+        })),
     }),
+
     {
       name: "cart-store",
       storage: createJSONStorage(() => localStorage),

@@ -7,6 +7,11 @@ const useProductsStore = create(
     (set) => ({
       products: productsList,
 
+      addProduct: (newProduct) =>
+        set((state) => ({
+          products: [newProduct, ...state.products],
+        })),
+
       deleteProduct: (id) =>
         set((state) => ({
           products: state.products.filter((product) => product.id != id),

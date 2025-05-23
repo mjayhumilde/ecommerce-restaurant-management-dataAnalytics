@@ -7,8 +7,6 @@ const useAuthStore = create(
       user: {
         name: "Lhenard Kaiser",
         email: "lhenardkaiser00@gmail.com",
-        course: "BSCS",
-        year: "3",
       },
       isAuthenticated: true,
       userRole: "user",

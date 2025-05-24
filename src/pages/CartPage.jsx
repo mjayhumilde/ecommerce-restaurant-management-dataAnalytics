@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 const CartPage = () => {
   const { deleteFromCart, clearCart } = useCartStore();
   const { addOrder } = useOrderStore();
-  const orders = useOrderStore((state) => state.orders);
   const cart = useCartStore((state) => state.cart);
   const user = useAuthStore((state) => state.user);
 
@@ -35,8 +34,6 @@ const CartPage = () => {
     clearCart();
     reset();
   }
-
-  console.log(orders);
 
   return (
     <main className="min-h-screen">

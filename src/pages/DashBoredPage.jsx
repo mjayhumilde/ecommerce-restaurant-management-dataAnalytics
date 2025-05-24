@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MetricCard from "../components/dashboard/MetricCard";
 import {
-  DollarSign,
+  PhilippinePeso,
   ShoppingCart,
   Users,
   TrendingUp,
@@ -99,7 +99,7 @@ const DashboardPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-green-950 p-6">
+    <div className="min-h-screen bg-green-950 p-6 pt-9">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -148,7 +148,7 @@ const DashboardPage = () => {
           <MetricCard
             title="Total Revenue"
             value={dashboardData.metrics.totalRevenue}
-            icon={DollarSign}
+            icon={PhilippinePeso}
             change={12.5}
             format="currency"
           />
@@ -225,7 +225,7 @@ const DashboardPage = () => {
                     </span>
                   </div>
                   <span className="text-green-400 font-medium ml-4">
-                    ${data.revenue}
+                    ₱{data.revenue}
                   </span>
                 </div>
               ))}
@@ -249,7 +249,7 @@ const DashboardPage = () => {
                         {transaction.id}
                       </span>
                       <span className="text-green-400 font-semibold">
-                        ${transaction.amount}
+                        ₱{transaction.amount}
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">

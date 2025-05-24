@@ -9,7 +9,7 @@ const useAuthStore = create(
         email: "lhenardkaiser00@gmail.com",
       },
       isAuthenticated: true,
-      userRole: "user",
+      userRole: "admin",
 
       login: (role) => set({ isAuthenticated: true, userRole: role }),
       logout: () => set({ isAuthenticated: false, userRole: null }),

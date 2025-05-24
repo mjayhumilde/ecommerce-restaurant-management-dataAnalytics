@@ -29,7 +29,7 @@ const Header = () => {
           <p className="text-2xl">QUADROS PIZZA</p>
         </div>
         {/* middle section */}
-        <div className="flex items-center p-2 font-bold text-red-900 bg-white border border-red-900 rounded-lg">
+        <div className="flex items-center p-2 font-bold text-green-950 bg-white border border-green-700 rounded-lg">
           <input
             className="px-2 border-none focus:outline-none"
             type="text"
@@ -70,7 +70,7 @@ const Header = () => {
             )}
             {isAuthenticated && userRole !== null ? (
               <User2
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer text-green-950"
                 onClick={() => navigate("profile")}
                 size={32}
               />

@@ -11,7 +11,7 @@ const MetricCard = ({
       <div>
         <p className="text-green-300 text-sm font-medium">{title}</p>
         <p className="text-2xl font-bold text-white mt-1">
-          {format === "currency" ? "$" : ""}
+          {format === "currency" ? "₱" : ""}
           {typeof value === "number" ? value.toLocaleString() : value}
           {format === "percentage" ? "%" : ""}
           {format === "time" ? " min" : ""}

@@ -1,7 +1,7 @@
-import useCartStore from "../store/useCartStore";
-import useAuthStore from "../store/useAuthStore";
-import useProductsStore from "../store/useProductsStore";
-import ProdButton from "./products/ProdButton";
+import useCartStore from "../../store/useCartStore";
+import useAuthStore from "../../store/useAuthStore";
+import useProductsStore from "../../store/useProductsStore";
+import ProdButton from "./ProdButton";
 import { Trash } from "lucide-react";
 
 const ProductCard = ({ product }) => {

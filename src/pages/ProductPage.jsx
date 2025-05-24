@@ -1,6 +1,6 @@
 import useProductsStore from "../store/useProductsStore";
 import useAuthStore from "../store/useAuthStore";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/products/ProductCard";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 

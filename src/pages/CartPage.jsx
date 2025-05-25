@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 const CartPage = () => {
   const { deleteFromCart, clearCart } = useCartStore();
   const { addOrder } = useOrderStore();
+  const orders = useOrderStore((state) => state.orders);
   const cart = useCartStore((state) => state.cart);
   const user = useAuthStore((state) => state.user);
 
@@ -24,16 +25,22 @@ const CartPage = () => {
   }, 0);
 
   function handlePurchase(data) {
-    addOrder({
-      id: cart.length * 3023, // to make it unique for now || avoid problems
-      user,
-      purchaseProducts: cart,
-      addrs: data,
-      orderStatus: "processing  ",
-    });
-    clearCart();
-    reset();
+    if (cart.length > 0) {
+      addOrder({
+        id: cart.length * 3023, // to make it unique for now || avoid problems
+        user,
+        purchaseProducts: cart,
+        addrs: data,
+        orderStatus: "pending",
+        timeElapsed: 5,
+        estimatedTime: 25,
+      });
+      clearCart();
+      reset();
+    }
   }
+
+  console.log(orders);
 
   return (
     <main className="min-h-screen bg-green-950">

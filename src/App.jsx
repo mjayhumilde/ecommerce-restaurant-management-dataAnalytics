@@ -11,6 +11,7 @@ import SignUpPage from "./pages/SignUpPage";
 import DashBoredPage from "./pages/DashBoredPage";
 import ManageAccountsPage from "./pages/ManageAccountsPage";
 import OrdersPage from "./pages/OrdersPage";
+import StaffUIPage from "./pages/StaffUIPage";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="manage-accounts" element={<ManageAccountsPage />} />
           <Route path="orders" element={<OrdersPage />} />
         </Route>
+        <Route path="staff/order-management" element={<StaffUIPage />} />
       </Routes>
     </Router>
   );

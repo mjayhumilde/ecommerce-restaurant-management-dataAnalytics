@@ -8,10 +8,31 @@ const useOrderStore = create(
 
       addOrder: (newOrder) =>
         set((state) => ({
-          orders: [newOrder, ...state.orders],
+          orders: [...state.orders, newOrder],
         })),
-    }),
 
+      updateOrderStatus: (orderId, newStatus) =>
+        set((state) => ({
+          orders: state.orders.map((order) =>
+            order.id === orderId
+              ? {
+                  ...order,
+                  orderStatus: newStatus,
+                  timeElapsed:
+                    newStatus === "preparing" ? 0 : order.timeElapsed,
+                }
+              : order
+          ),
+        })),
+
+      removeOrder: (orderId) =>
+        set((state) => ({
+          orders: state.orders.filter((order) => order.id !== orderId),
+        })),
+
+      getOrdersByStatus: (status) => (state) =>
+        state.orders.filter((order) => order.orderStatus === status),
+    }),
     {
       name: "orders-store",
       storage: createJSONStorage(() => localStorage),
